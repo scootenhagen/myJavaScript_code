@@ -1,0 +1,19 @@
+// This form can be used for form progress tracking. It uses sessiom storage to make sure that the event only fires once for each element
+
+
+if (this.id !== '') {
+	var myLink = this.id
+} else {
+	if (jQuery(this).hasClass('xxxxx')) {
+		var myLink = "xxxxx";
+	} else {
+		var myLink = "xxxxx"
+	}
+}
+if (sessionStorage.getItem('analytics_' + myLink) === null) {
+	sessionStorage.setItem('analytics_' + myLink, true)
+	utag.link({
+		"event_type": "xxxxxx",
+		"form_field": myLink
+	})
+}

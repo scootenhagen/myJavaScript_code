@@ -1,0 +1,16 @@
+//This code can aalso track form progress by using session storage
+
+if (this.id !== '') {
+  var myField = jQuery(this).attr('id');
+} else {
+  if (jQuery(this.class !== 'undefined')) {
+    var myField = jQuery(this).attr('xxxx');
+  }
+}
+if (sessionStorage.getItem('analytics_' + myField) === null) {
+  sessionStorage.setItem('analytics_' + myField, true)
+  utag.link({
+    "event_type": "sr_form_click",
+    "form_field": myField
+  })
+}
